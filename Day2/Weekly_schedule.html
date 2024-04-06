@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekly schedule using grid</title>
+    <style>
+        p{
+            font-size: xxx-large;
+        }
+        *{
+            text-align: center;
+            font-weight: bolder;
+            font-size: large;
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+        }
+        div>.content{
+            display: grid; 
+            grid-template-columns: repeat(6,1fr);
+            grid-gap: 10px 10px;
+           margin-left: 40px;
+           margin-right: 10px;
+            
+        }
+ .content>div{
+   
+    width: 150px;
+    height: 18px;
+    
+    border-radius: 15px ;
+    padding: 13px;
+ }
+ 
+
+ .content>div:nth-child(1){
+    border: none;
+ }
+
+ 
+ .pink{
+    
+    background-color:rgb(255,214,239)
+ }
+ .blue{
+    background-color: rgb(191,238,240);
+ }
+ .khaki{
+    background-color: rgb(250,236,170);
+ }
+ #last{
+    display: block;
+    margin-top: 10px;
+    margin-left: 38px;
+padding: 10px;
+border-radius: 15px;
+width: 1240px;
+text-align: left;
+font-weight: 900;
+ }
+
+ div>img{
+width: 150px;
+height: 150px;
+ }
+ body>div>div{
+display: flex;
+justify-content: center;
+align-items: center;
+ }
+
+    </style>
+</head>
+<body>
+    <div>
+
+        <div >
+
+           
+                <div >
+    
+                    <img src="data:image/jpeg;base64,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" alt="">
+                </div>
+                <br>
+               <p> Weekly Schedule </p>
+                <br>
+                <div>
+    
+                    <img src="data:image/jpeg;base64,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" alt="">
+                </div>
+          
+        </div>
+
+        <div class="content" ">
+
+            <div></div>
+            <div class="pink">Monday</div>
+            <div class="khaki">Tuesday</div>
+            <div class="pink">Wednesday</div>
+            <div class="khaki">Thursday</div>
+            <div class="pink">Friday</div>
+            <div class="blue">08:00</div>
+            <div class="pink">Physics</div>
+            <div class="khaki">Biology</div>
+            <div class="pink">Math</div>
+            <div class="khaki">Chemistery</div>
+            <div class="pink">Marathi</div>
+            <div class="blue">09:00</div>
+            <div class="pink">Marathi</div>
+            <div class="khaki">Chemistery</div>
+            <div class="pink">Physics</div>
+            <div class="khaki">Math</div>
+            <div class="pink">Biology</div>
+            <div class="blue">10:00</div>
+            <div class="pink">Math</div>
+            <div class="khaki">Physics</div>
+            <div class="pink">Marathi</div>
+            <div class="khaki">Biology</div>
+            <div class="pink">Chemistery</div>
+            <div class="blue">11:00</div>
+            <div class="pink">English</div>
+            <div class="khaki">English</div>
+            <div class="pink">English</div>
+            <div class="khaki">English</div>
+            <div class="pink">English</div>
+            <div class="blue">12:00</div>
+            <div class="pink">Lunch</div>
+            <div class="khaki">Lunch</div>
+            <div class="pink">Lunch</div>
+            <div class="khaki">Lunch</div>
+            <div class="pink">Lunch</div>
+            <div class="blue">13:00</div>
+            <div class="pink">chemistry</div>
+            <div class="khaki">Math</div>
+            <div class="pink">Marathi</div>
+            <div class="khaki">Biology</div>
+            <div class="pink">Physics</div>
+            <div class="blue">14:00</div>
+            <div class="pink">PT</div>
+            <div class="khaki">PT</div>
+            <div class="pink">PT</div>
+            <div class="khaki">PT</div>
+            <div class="pink">PT</div>
+            <div class="blue">15:00</div>
+            <div class="pink">Biology</div>
+            <div class="khaki">Chemistry</div>
+            <div class="pink">Physics</div>
+            <div class="khaki">Marathi</div>
+            <div class="pink">Math</div>
+            <div class="blue">16:00</div>
+            <div class="pink">Environment</div>
+            <div class="khaki">Environment</div>
+            <div class="pink">Environment</div>
+            <div class="khaki">Environment</div>
+            <div class="pink">Environment</div>
+        </div>
+        <span class="blue" id="last">Note:</span>
+    </div>
+
+   
+</body>
+</html>
