@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <div>
+            <input type="text" placeholder="enter 1st number" id="input1">
+            <input type="text"  placeholder="enter 2nd number"  id="input2">
+        </div>
+        <div>
+            <button onclick="Addition()"  >Add</button>
+            <button onclick="Subtraction()" >Subtract</button>
+            <button onclick="Multiplication()" >Multiply</button>
+            <button onclick="Division()" >Divide</button>
+        </div>
+    </div>
+</body>
+<script>
+    
+
+// let input1St=document.querySelector("div>input");
+// let input2Nd=document.querySelector("div>input>input");
+
+let input1St=document.querySelector("#input1");
+let input2Nd=document.querySelector("#input2");
+
+
+ function Addition(){
+
+    let num1=input1St.value
+    let num2=input2Nd.value
+    
+    let add= +num1  +   +num2
+  alert(add)
+ }
+
+ 
+ function Multiplication(){
+  let num1=input1St.value
+  let num2=input2Nd.value
+
+  let multiplication= +num1 * +num2
+  alert(multiplication)
+
+}
+
+
+
+function Division(){
+    let num1=input1St.value
+    let num2=input2Nd.value
+
+    let division= +num1 / +num2
+
+    alert(division)
+
+}
+
+
+function Subtraction(){
+let num1=input1St.value
+let num2=input2Nd.value
+
+let subtraction= +num1 - +num2
+alert(subtraction)
+}
+
+
+</script>
+</html>
