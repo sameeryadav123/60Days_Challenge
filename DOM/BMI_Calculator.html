@@ -1,0 +1,92 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        div{
+            background-color: rgb(163, 228, 228);
+            
+        }
+        input{
+            margin-top: 5px;
+            width: 300px;
+            border-radius: 50px;
+            padding: 7px;
+
+        }
+        button{
+            margin-top: 5px;
+            padding: 5px;
+            border-radius: 5px;
+            color: whitesmoke;
+            background-color: black;
+            cursor: pointer;
+        }
+        #result{
+        color: red;
+        }
+        :hover input{
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Check Your BMI</h1>
+        <div id="container">
+            <p>Put your weight in here (KG)</p>
+            <input type="text" placeholder="" id="weight">
+
+            <p>And your heright in here (CM)</p>
+            <input type="text" id="height">
+           <br>
+            <button onclick="bmi()">Calculate BMI</button>
+
+            <h2 id="result"></h2>
+        </div>
+
+    </div>
+</body>
+<script> 
+
+let input1=document.querySelector('#weight')
+let input2=document.querySelector('#height')
+let res=document.querySelector('#result')
+
+function bmi(){
+    let weight=input1.value;
+    let height=input2.value / 100;
+      
+    
+  let bmi=weight / (height * height)
+    
+    let details;
+    if(bmi <=18.4){
+        
+        details='Under weight'
+    } else if(bmi >=18.5 && bmi<=24.9){
+        details="Normal Weight"
+    } else if(bmi >=25 && bmi<=29.9){
+        details="Overweight"
+    }else {
+        details='Obese'
+    }
+    
+
+res.innerHTML=`Your BMI is ${bmi} which means You are${details}`
+}
+
+
+
+
+
+</script>
+</html>
