@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            text-align: center;
+            font-size: xxx-large;
+        }
+        #container{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            grid-gap:25px ;
+            margin: 100px;
+            text-align: center;
+          
+     
+           
+        }
+    </style>
+</head>
+<body>
+    <h1>Strategic Investors</h1>
+    <div id="container">
+    </div>
+</body>
+<script>
+    
+let data=[
+    
+    {
+        img:'https://masai-website-images.s3.ap-south-1.amazonaws.com/Vijay_Shekhar_Sharma_Paytm_96f52579b8.jpg',
+        name:'Vijay Shekhar Sharma',
+        position:'Founder & CEO',
+        company:'https://masai-website-images.s3.ap-south-1.amazonaws.com/paytm_rect_06df45a24f.svg'
+    },
+
+
+    {
+        img:'https://masai-website-images.s3.ap-south-1.amazonaws.com/Rectangle_427_637d69bb57.png',
+        name:'Kunal Shah',
+        position:'Founder',
+        company:'https://masai-website-images.s3.ap-south-1.amazonaws.com/cred_0a47d7b4f8.png'
+    },
+
+
+    {
+        img:'https://masai-website-images.s3.ap-south-1.amazonaws.com/amrish_rau_pine_labs_144e5e587c.jpg',
+        name:'Amrish Rau',
+        position:'CEO',
+        company:'https://masai-website-images.s3.ap-south-1.amazonaws.com/pine_labs_0aa2407434.png'
+    },
+
+    {
+        img:'https://masai-website-images.s3.ap-south-1.amazonaws.com/Sampad_swain_Instamojo_f12bf6341e.jpg',
+        name:'Sampad Swain',
+        position:'Co-Founder & CEO',
+        company:'https://masai-website-images.s3.ap-south-1.amazonaws.com/instamojo_8763e704f7.png'
+    }
+]
+
+
+    
+data.forEach((ele)=>{
+    let container=document.querySelector("#container")
+
+    
+
+let content=document.createElement("div")
+
+content.style="    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;     border-radius: 10px;"
+
+
+
+let img=document.createElement("img")
+img.src=ele.img
+img.style="  border-radius: 10px;"
+
+let br=document.createElement("br")
+
+let headingH3=document.createElement("h3")
+headingH3.innerText=ele.name
+
+let p=document.createElement("p")
+p.innerText=ele.position
+
+let logo=document.createElement("img")   
+logo.src=ele.company
+logo.style="height:50px"
+
+
+content.append(img,headingH3,p,logo)
+container.appendChild(content)
+
+
+
+
+})
+ 
+
+</script>
+</html>
