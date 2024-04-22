@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            border: 1px solid black;
+            text-align: center;
+            width: 400px;
+            height: 300px;
+            margin-top: 100px;
+            margin-left: 500px;
+            padding: 10px;
+        }
+      
+
+        h1{
+            margin-top:100px ;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+
+        <h1 id="stopwatch">0s:00</h1>
+        <button id="stop">stop</button>
+        <button id="start">start</button>
+        <button id="reset">reset</button>
+    </div>
+</body>
+<script>
+    let stopWatchDisplay=document.querySelector('#stopwatch')
+
+    let startButton=document.querySelector("#start")
+
+    let pauseButton=document.querySelector("#stop")
+
+    let resetButton=document.querySelector("#reset")
+
+
+    let starTime;
+    let endTime=0;
+    let intervals;
+
+
+    function startTimer(){
+        
+        starTime=Date.now() -endTime
+      
+        intervals=setInterval(updateTimer,20)
+    }
+
+    function pauseTimer(){
+        
+        clearInterval(intervals)
+    }
+
+    function resetTimer(){
+       clearInterval(intervals)
+       endTime=0
+       stopWatchDisplay.textContent= stopwatch(endTime)
+    }
+
+    function updateTimer(){
+        let currtenTime=Date.now()
+        endTime=currtenTime-starTime
+        stopWatchDisplay.textContent=stopwatch(endTime)
+    }
+
+
+    function stopwatch (time){
+        let seconds= (time % 6000)/1000
+        let miliSecond=(time % 6000)
+
+        return (
+        stopWatchDisplay.innerHTML= `${seconds}:${miliSecond}`   
+        )
+    }
+    startButton.addEventListener("click",startTimer)
+    pauseButton.addEventListener("click",pauseTimer)
+    resetButton.addEventListener("click",resetTimer)
+    
+
+
+</script>
+</html>
